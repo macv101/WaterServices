@@ -1,0 +1,9 @@
+C:\Users\HIS94466\documents\visual studio 2010\Projects\WaterServices\WaterServices\bin\Debug\WaterServices.exe
+C:\Users\HIS94466\documents\visual studio 2010\Projects\WaterServices\WaterServices\bin\Debug\WaterServices.pdb
+C:\Users\HIS94466\documents\visual studio 2010\Projects\WaterServices\WaterServices\obj\x86\Debug\WaterServices.csprojResolveAssemblyReference.cache
+C:\Users\HIS94466\documents\visual studio 2010\Projects\WaterServices\WaterServices\obj\x86\Debug\WaterServices.Properties.Resources.resources
+C:\Users\HIS94466\documents\visual studio 2010\Projects\WaterServices\WaterServices\obj\x86\Debug\WaterServices.csproj.GenerateResource.Cache
+C:\Users\HIS94466\documents\visual studio 2010\Projects\WaterServices\WaterServices\obj\x86\Debug\WaterServices.exe
+C:\Users\HIS94466\documents\visual studio 2010\Projects\WaterServices\WaterServices\obj\x86\Debug\WaterServices.pdb
+C:\Users\HIS94466\documents\visual studio 2010\Projects\WaterServices\WaterServices\bin\Debug\WaterServices.exe.config
+C:\Users\HIS94466\documents\visual studio 2010\Projects\WaterServices\WaterServices\obj\x86\Debug\WaterServices.Home.resources
