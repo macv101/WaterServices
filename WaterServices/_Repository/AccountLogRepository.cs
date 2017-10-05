@@ -24,10 +24,11 @@ namespace WaterServices._Repository
             try
             {
                 string query = Resources.selectAccountLog;
-                SQLiteParameter[] sqlParams = new SQLiteParameter[1];
+                SQLiteParameter[] sqlParams = null;
                 if (name != "")
                 {
-                    query += "WHERE Client.sFirstName || Client.sLastName LIKE @name";                    
+                    sqlParams = new SQLiteParameter[1];
+                    query += " WHERE Client.sFirstName || Client.sLastName LIKE @name";                    
                     sqlParams[0] = new SQLiteParameter("@name", name);                   
                 }
 

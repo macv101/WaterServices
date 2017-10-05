@@ -23,6 +23,8 @@ namespace WaterServices
         private void Home_Load(object sender, EventArgs e)
         {
             load_DataGrid(accountBus.getAccountLogs());
+            txtSearch.Text = "Search Name";
+            txtSearch.ForeColor = Color.Gray;
            
             
         }
@@ -76,6 +78,22 @@ namespace WaterServices
         {
             string name = txtSearch.Text;
             load_DataGrid(accountBus.getAccountLogs(name));
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            string txt = txtSearch.Text;
+            txtSearch.Text = txt == "Search Name" ? "" : txt;
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            string txt = txtSearch.Text;
+            if(txt == "") 
+            {
+                txtSearch.Text = "Search Name";
+                txtSearch.ForeColor = Color.Gray;
+            }
         }
 
     }

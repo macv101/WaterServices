@@ -78,6 +78,8 @@
             this.txtSearch.TabIndex = 1;
             this.txtSearch.Text = "Search Name";
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // btnSearch
             // 
