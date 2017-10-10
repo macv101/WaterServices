@@ -118,12 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="selectAccountLog" xml:space="preserve">
-    <value>SELECT * FROM AccountLog LEFT OUTER JOIN Client ON Client.id = AccountLog.kClient LEFT OUTER JOIN Product ON Product.id = AccountLog.kProduct LEFT OUTER JOIN ProductContainer ON INSTR(Product.sCode,ProductContainer.sCode) &gt; 0 LEFT OUTER JOIN ProductType ON INSTR(Product.sCode,ProductType.sCode) &gt; 0 LEFT OUTER JOIN ProductVolume ON INSTR(Product.sCode,ProductVolume.sCode) &gt; 0</value>
+    <value>SELECT AccountLog.dDate, Client.sCompany, Client.sFirstName, Client.sLastName, Product.sCode, Client.sPhone, AccountLog.iQuantity, Product.fPrice, AccountLog.iInterval, AccountLog.kClient, AccountLog.kProduct, ProductContainer.sCode AS ContainerCode, ProductType.sCode AS TypeCode, ProductVolume.sCode AS VolumeCode FROM AccountLog LEFT OUTER JOIN Client ON Client.id = AccountLog.kClient LEFT OUTER JOIN Product ON Product.id = AccountLog.kProduct LEFT OUTER JOIN ProductContainer ON INSTR(Product.sCode, ProductContainer.sCode) &gt; 0 LEFT OUTER JOIN ProductType ON INSTR(Product.sCode, ProductType.sCode) &gt; 0 LEFT OUTER JOIN ProductVolume ON INSTR(Product.sCode, ProductVolume.sCode) &gt; 0 </value>
   </data>
   <data name="selectClient" xml:space="preserve">
     <value>SELECT * FROM Client</value>
   </data>
   <data name="selectClientLocation" xml:space="preserve">
     <value>SELECT * FROM Client LEFT OUTER JOIN Client_Location ON Client.id = Client_Location.kClient LEFT OUTER JOIN Location ON Location.id = Client_Location.kLocation</value>
+  </data>
+  <data name="selectProduct" xml:space="preserve">
+    <value>SELECT Product.id, Product.sCode, ProductVolume.sCode AS VolumeCode, ProductContainer.sCode AS ContainerCode, ProductType.sCode AS TypeCode, ProductContainer.sName, ProductType.sType, Product.fPrice, ProductVolume.fAmount, ProductVolume.sUnit, ProductVolume.sUnitDescription FROM Product LEFT OUTER JOIN ProductContainer ON INSTR(Product.sCode, ProductContainer.sCode) &gt; 0 LEFT OUTER JOIN ProductType ON INSTR(Product.sCode, ProductType.sCode) &gt; 0 LEFT OUTER JOIN ProductVolume ON INSTR(Product.sCode, ProductVolume.sCode) &gt; 0</value>
+  </data>
+  <data name="selectProductContainer" xml:space="preserve">
+    <value>SELECT sCode, sName FROM ProductContainer</value>
+  </data>
+  <data name="selectProductType" xml:space="preserve">
+    <value>SELECT sCode, sType FROM ProductType</value>
+  </data>
+  <data name="selectProductVolume" xml:space="preserve">
+    <value>SELECT sCode, fAmount || sUnit as AmountUnit FROM ProductVolume</value>
   </data>
 </root>

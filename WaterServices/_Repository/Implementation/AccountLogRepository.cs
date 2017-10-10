@@ -18,20 +18,21 @@ namespace WaterServices._Repository
             
         }
 
-        public DataTable getAccountLogs(string name)
+        public DataTable getAccountLogs(string name, DateTime? from, DateTime? to)
         {
             DataTable ret = null;
             try
             {
-                string query = Resources.selectAccountLog;
-                SQLiteParameter[] sqlParams = null;
-                if (name != "")
-                {
-                    sqlParams = new SQLiteParameter[1];
-                    query += " WHERE Client.sFirstName || Client.sLastName LIKE @name";                    
-                    sqlParams[0] = new SQLiteParameter("@name", name);                   
-                }
+                string query = Resources.selectAccountLog + " WHERE AccountLog.dDate >= @from AND AccountLog.dDate < @to";
+                SQLiteParameter[] sqlParams = sqlParams = new SQLiteParameter[3];
+                sqlParams[0] = new SQLiteParameter("@from", from);
+                sqlParams[1] = new SQLiteParameter("@to", to);
 
+                if (name != "") query += "INSTR(upper(Client.sFirstName), upper(@name)) > 0 OR INSTR(upper(Client.sLastName), upper(@name)) > 0";   
+
+                sqlParams[2] = new SQLiteParameter("@name", name);
+
+                query += " ORDER BY datetime(AccountLog.dDate) DESC ";
                 ret = conn.executeSelectQuery(query, sqlParams);
             }
             catch (Exception e)

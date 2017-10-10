@@ -61,7 +61,7 @@ namespace WaterServices.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT * FROM AccountLog LEFT OUTER JOIN Client ON Client.id = AccountLog.kClient LEFT OUTER JOIN Product ON Product.id = AccountLog.kProduct LEFT OUTER JOIN ProductContainer ON INSTR(Product.sCode,ProductContainer.sCode) &gt; 0 LEFT OUTER JOIN ProductType ON INSTR(Product.sCode,ProductType.sCode) &gt; 0 LEFT OUTER JOIN ProductVolume ON INSTR(Product.sCode,ProductVolume.sCode) &gt; 0.
+        ///   Looks up a localized string similar to SELECT AccountLog.dDate, Client.sCompany, Client.sFirstName, Client.sLastName, Product.sCode, Client.sPhone, AccountLog.iQuantity, Product.fPrice, AccountLog.iInterval, AccountLog.kClient, AccountLog.kProduct, ProductContainer.sCode AS ContainerCode, ProductType.sCode AS TypeCode, ProductVolume.sCode AS VolumeCode FROM AccountLog LEFT OUTER JOIN Client ON Client.id = AccountLog.kClient LEFT OUTER JOIN Product ON Product.id = AccountLog.kProduct LEFT OUTER JOIN ProductContainer ON INSTR(Product.sCode, Produc [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string selectAccountLog {
             get {
@@ -84,6 +84,42 @@ namespace WaterServices.Properties {
         internal static string selectClientLocation {
             get {
                 return ResourceManager.GetString("selectClientLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT Product.id, Product.sCode, ProductVolume.sCode AS VolumeCode, ProductContainer.sCode AS ContainerCode, ProductType.sCode AS TypeCode, ProductContainer.sName, ProductType.sType, Product.fPrice, ProductVolume.fAmount, ProductVolume.sUnit, ProductVolume.sUnitDescription FROM Product LEFT OUTER JOIN ProductContainer ON INSTR(Product.sCode, ProductContainer.sCode) &gt; 0 LEFT OUTER JOIN ProductType ON INSTR(Product.sCode, ProductType.sCode) &gt; 0 LEFT OUTER JOIN ProductVolume ON INSTR(Product.sCode, ProductVol [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string selectProduct {
+            get {
+                return ResourceManager.GetString("selectProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT sCode, sName FROM ProductContainer.
+        /// </summary>
+        internal static string selectProductContainer {
+            get {
+                return ResourceManager.GetString("selectProductContainer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT sCode, sType FROM ProductType.
+        /// </summary>
+        internal static string selectProductType {
+            get {
+                return ResourceManager.GetString("selectProductType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT sCode, fAmount || sUnit as AmountUnit FROM ProductVolume.
+        /// </summary>
+        internal static string selectProductVolume {
+            get {
+                return ResourceManager.GetString("selectProductVolume", resourceCulture);
             }
         }
     }

@@ -6,6 +6,6 @@ namespace WaterServices._Bus
 {
     public interface IAccountLogBus
     {
-        System.Data.DataTable getAccountLogs(string name = "");
+        System.Data.DataTable getAccountLogs(string name = "", DateTime? from = null, DateTime? to = null);
     }
 }

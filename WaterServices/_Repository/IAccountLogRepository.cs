@@ -7,6 +7,6 @@ namespace WaterServices._Repository
 {
     public interface IAccountLogRepository
     {
-        System.Data.DataTable getAccountLogs(string name = "");
+        System.Data.DataTable getAccountLogs(string name = "", DateTime? from = null, DateTime? to = null);
     }
 }
