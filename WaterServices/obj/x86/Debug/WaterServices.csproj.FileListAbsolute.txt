@@ -7,3 +7,4 @@ C:\Users\HIS94466\documents\visual studio 2010\Projects\WaterServices\WaterServi
 C:\Users\HIS94466\documents\visual studio 2010\Projects\WaterServices\WaterServices\obj\x86\Debug\WaterServices.pdb
 C:\Users\HIS94466\documents\visual studio 2010\Projects\WaterServices\WaterServices\bin\Debug\WaterServices.exe.config
 C:\Users\HIS94466\documents\visual studio 2010\Projects\WaterServices\WaterServices\obj\x86\Debug\WaterServices.Home.resources
+C:\Users\HIS94466\Documents\Visual Studio 2010\Projects\WaterServices\WaterServices\obj\x86\Debug\WaterServices._Forms.Dialog.Product_NotFound.resources

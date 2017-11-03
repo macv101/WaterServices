@@ -54,6 +54,12 @@
     <Compile Include="_Bus\IAccountLogBus.cs" />
     <Compile Include="_Bus\IProductBus.cs" />
     <Compile Include="_Bus\Implementation\ProductBus.cs" />
+    <Compile Include="_Forms\Dialog\Product_NotFound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Forms\Dialog\Product_NotFound.Designer.cs">
+      <DependentUpon>Product_NotFound.cs</DependentUpon>
+    </Compile>
     <Compile Include="_Repository\Implementation\ClientRepository.cs" />
     <Compile Include="_Repository\Implementation\AccountLogRepository.cs" />
     <Compile Include="_Forms\Home.cs">
@@ -79,6 +85,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="_Forms\Dialog\Product_NotFound.resx">
+      <DependentUpon>Product_NotFound.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>

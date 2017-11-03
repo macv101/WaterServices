@@ -58,8 +58,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dtGridTime = new System.Windows.Forms.DateTimePicker();
             this.txtScan = new System.Windows.Forms.TextBox();
-            this.lblProductDescription = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCompany = new System.Windows.Forms.TextBox();
+            this.cbxScanVolume = new System.Windows.Forms.ComboBox();
+            this.cbxScanContainer = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbxScanType = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHome)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -317,9 +325,9 @@
             // 
             // txtScan
             // 
-            this.txtScan.Location = new System.Drawing.Point(12, 355);
+            this.txtScan.Location = new System.Drawing.Point(15, 360);
             this.txtScan.Name = "txtScan";
-            this.txtScan.Size = new System.Drawing.Size(155, 20);
+            this.txtScan.Size = new System.Drawing.Size(187, 20);
             this.txtScan.TabIndex = 33;
             this.txtScan.Text = "Scan Code";
             this.txtScan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -327,40 +335,129 @@
             this.txtScan.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtScan_KeyUp);
             this.txtScan.Leave += new System.EventHandler(this.txtScan_Leave);
             // 
-            // lblProductDescription
+            // txtCompany
             // 
-            this.lblProductDescription.AutoSize = true;
-            this.lblProductDescription.Location = new System.Drawing.Point(173, 358);
-            this.lblProductDescription.Name = "lblProductDescription";
-            this.lblProductDescription.Size = new System.Drawing.Size(10, 13);
-            this.lblProductDescription.TabIndex = 34;
-            this.lblProductDescription.Text = " ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            this.txtCompany.AutoCompleteCustomSource.AddRange(new string[] {
             "Test",
             "Fest",
             "Pest",
             "Fast",
             "Past",
             "Paast"});
-            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox1.Location = new System.Drawing.Point(12, 381);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 20);
-            this.textBox1.TabIndex = 35;
-            this.textBox1.Text = "Enter Client Name";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCompany.Location = new System.Drawing.Point(15, 410);
+            this.txtCompany.Name = "txtCompany";
+            this.txtCompany.Size = new System.Drawing.Size(187, 20);
+            this.txtCompany.TabIndex = 35;
+            this.txtCompany.Text = "Company";
+            this.txtCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cbxScanVolume
+            // 
+            this.cbxScanVolume.Enabled = false;
+            this.cbxScanVolume.FormattingEnabled = true;
+            this.cbxScanVolume.Location = new System.Drawing.Point(208, 360);
+            this.cbxScanVolume.Name = "cbxScanVolume";
+            this.cbxScanVolume.Size = new System.Drawing.Size(231, 21);
+            this.cbxScanVolume.TabIndex = 36;
+            // 
+            // cbxScanContainer
+            // 
+            this.cbxScanContainer.Enabled = false;
+            this.cbxScanContainer.FormattingEnabled = true;
+            this.cbxScanContainer.Location = new System.Drawing.Point(445, 360);
+            this.cbxScanContainer.Name = "cbxScanContainer";
+            this.cbxScanContainer.Size = new System.Drawing.Size(117, 21);
+            this.cbxScanContainer.TabIndex = 37;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(205, 344);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 13);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Volume";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(442, 344);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.TabIndex = 39;
+            this.label10.Text = "Container";
+            // 
+            // cbxScanType
+            // 
+            this.cbxScanType.Enabled = false;
+            this.cbxScanType.FormattingEnabled = true;
+            this.cbxScanType.Location = new System.Drawing.Point(566, 360);
+            this.cbxScanType.Name = "cbxScanType";
+            this.cbxScanType.Size = new System.Drawing.Size(118, 21);
+            this.cbxScanType.TabIndex = 40;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(563, 344);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(31, 13);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "Type";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(12, 394);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 13);
+            this.label12.TabIndex = 42;
+            this.label12.Text = "Company";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(205, 394);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(82, 13);
+            this.label13.TabIndex = 44;
+            this.label13.Text = "First/Last Name";
+            // 
+            // txtName
+            // 
+            this.txtName.AutoCompleteCustomSource.AddRange(new string[] {
+            "Test",
+            "Fest",
+            "Pest",
+            "Fast",
+            "Past",
+            "Paast"});
+            this.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtName.Location = new System.Drawing.Point(208, 410);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(187, 20);
+            this.txtName.TabIndex = 43;
+            this.txtName.Text = "Enter Client Name";
+            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 474);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.lblProductDescription);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.cbxScanType);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.cbxScanContainer);
+            this.Controls.Add(this.cbxScanVolume);
+            this.Controls.Add(this.txtCompany);
             this.Controls.Add(this.txtScan);
             this.Controls.Add(this.dtGridTime);
             this.Controls.Add(this.label5);
@@ -431,8 +528,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtGridTime;
         private System.Windows.Forms.TextBox txtScan;
-        private System.Windows.Forms.Label lblProductDescription;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCompany;
+        private System.Windows.Forms.ComboBox cbxScanVolume;
+        private System.Windows.Forms.ComboBox cbxScanContainer;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbxScanType;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtName;
 
     }
 }

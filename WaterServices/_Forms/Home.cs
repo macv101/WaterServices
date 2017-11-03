@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using WaterServices._Bus;
+using WaterServices._Forms.Dialog;
 
 namespace WaterServices
 {
@@ -28,15 +29,21 @@ namespace WaterServices
         {
             dtFilterFrom.Value = DateTime.Today;
             dtFilterTo.Value = DateTime.Today;
-            Console.WriteLine(dtFilterTo);
             load_DataGrid(accountBus.getAccountLogs(name: "", from: dtFilterFrom.Value, to: dtFilterTo.Value.AddDays(1).AddTicks(-1)));
+
             load_comboBox(productBus.getProductContainers(), cbxGridContainer);
             load_comboBox(productBus.getProductTypes(), cbxGridType);
             load_comboBox(productBus.getProductVolumes(), cbxGridVolume);
-            txtSearch.Text = "Search Name";
-            txtSearch.ForeColor = Color.Gray;
+            load_comboBox(productBus.getProductContainers(), cbxScanContainer);
+            load_comboBox(productBus.getProductTypes(), cbxScanType);
+            load_comboBox(productBus.getProductVolumes(), cbxScanVolume);
+
+            txtSearch.Text = "Search Name";            
             txtScan.Text = "Scan Code";
-            txtScan.ForeColor = Color.Gray;
+            txtCompany.Text = "Company Name";
+            txtName.Text = "First/Last Name";
+            txtSearch.ForeColor = txtScan.ForeColor =
+            txtCompany.ForeColor = txtName.ForeColor = Color.Gray;
         }
 
         #region Form Event Functions
@@ -130,13 +137,17 @@ namespace WaterServices
             {
                 Console.WriteLine(txtScan.Text);
                 DataTable product = productBus.getProducts(txtScan.Text);
-                if(product.Rows.Count > 0) lblProductDescription.Text = 
-                        string.Format("{0} {1} {2} at {3} each", 
-                            product.Rows[0].Field<string>("sUnitDescription"),
-                            product.Rows[0].Field<string>("sName"),
-                            product.Rows[0].Field<string>("sType"),
-                            product.Rows[0].Field<object>("fPrice")
-                            );
+                if (product.Rows.Count > 0)
+                {
+                    cbxScanContainer.SelectedValue = product.Rows[0].Field<string>("ContainerCode");
+                    cbxScanType.SelectedValue = product.Rows[0].Field<string>("TypeCode");
+                    cbxScanVolume.SelectedValue = product.Rows[0].Field<string>("VolumeCode");
+                }
+                else
+                {
+                    Form noProduct = new Product_NotFound();
+                    noProduct.Show();
+                }
             } 
         }   
 
@@ -166,6 +177,8 @@ namespace WaterServices
 
         private void load_comboBox(DataTable dataSource, ComboBox cbx)
         {
+            dataSource.Rows.InsertAt(dataSource.NewRow(), 0);
+            
             cbx.DisplayMember = dataSource.Columns[1].ColumnName;
             cbx.ValueMember = dataSource.Columns[0].ColumnName;
             cbx.DataSource = dataSource;
